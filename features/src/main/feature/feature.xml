@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features name="cxf-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0 ">
+
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
+    <repository>mvn:org.apache.aries.jax.rs/org.apache.aries.jax.rs.features/1.0.3/xml</repository>
+
+    <feature name="entity" version="${project.version}">
+        <bundle>mvn:com.nixsolutions/entity/${project.version}</bundle>
+    </feature>
+
+
+    <feature name="provider" version="${project.version}">
+        <bundle>mvn:com.nixsolutions/provider/${project.version}</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-core-asl/${jackson.version}</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-mapper-asl/${jackson.version}</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-jaxrs/${jackson.version}</bundle>
+        <feature version="${cxf.version}" dependency="true">cxf</feature>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-rt-rs-client/${cxf.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-core/${cxf.version}</bundle>
+    </feature>
+
+
+    <feature name="client" version="${project.version}" >
+        <feature dependency="true">http</feature>
+        <requirement>osgi.service;effective:=active;filter:=(objectClass=org.osgi.service.http.HttpService)</requirement>
+        <feature dependency="true">aries-blueprint</feature>
+        <feature version="${cxf.version}" dependency="true">cxf</feature>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-rt-rs-client/${cxf.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-core/${cxf.version}</bundle>
+        <bundle>mvn:com.nixsolutions/client/${project.version}</bundle>
+        <bundle dependency="true">mvn:org.json/json/20160810</bundle>
+    </feature>
+</features>
