@@ -1,4 +1,4 @@
-package com.nixsolutions.client;
+package com.nixsolutions.entity;
 
 import com.nixsolutions.entity.Weather;
 

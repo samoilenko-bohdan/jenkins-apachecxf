@@ -9,18 +9,6 @@
         <bundle>mvn:com.nixsolutions/entity/${project.version}</bundle>
     </feature>
 
-
-    <feature name="provider" version="${project.version}">
-        <bundle>mvn:com.nixsolutions/provider/${project.version}</bundle>
-        <bundle>mvn:org.codehaus.jackson/jackson-core-asl/${jackson.version}</bundle>
-        <bundle>mvn:org.codehaus.jackson/jackson-mapper-asl/${jackson.version}</bundle>
-        <bundle>mvn:org.codehaus.jackson/jackson-jaxrs/${jackson.version}</bundle>
-        <feature version="${cxf.version}" dependency="true">cxf</feature>
-        <bundle dependency="true">mvn:org.apache.cxf/cxf-rt-rs-client/${cxf.version}</bundle>
-        <bundle dependency="true">mvn:org.apache.cxf/cxf-core/${cxf.version}</bundle>
-    </feature>
-
-
     <feature name="client" version="${project.version}" >
         <feature dependency="true">http</feature>
         <requirement>osgi.service;effective:=active;filter:=(objectClass=org.osgi.service.http.HttpService)</requirement>
@@ -31,4 +19,19 @@
         <bundle>mvn:com.nixsolutions/client/${project.version}</bundle>
         <bundle dependency="true">mvn:org.json/json/20160810</bundle>
     </feature>
+
+    <feature name="provider" version="${project.version}">
+        <feature dependency="true">client</feature>
+        <feature dependency="true">entity</feature>
+        <bundle>mvn:com.nixsolutions/provider/${project.version}</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-core-asl/${jackson.version}</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-mapper-asl/${jackson.version}</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-jaxrs/${jackson.version}</bundle>
+        <feature version="${cxf.version}" dependency="true">cxf</feature>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-rt-rs-client/${cxf.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-core/${cxf.version}</bundle>
+    </feature>
+
+
+
 </features>

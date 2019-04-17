@@ -2,6 +2,7 @@ package com.nixsolutions.provider;
 
 
 import com.nixsolutions.client.Client;
+import com.nixsolutions.entity.ProviderInterface;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;

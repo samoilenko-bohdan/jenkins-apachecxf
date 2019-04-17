@@ -1,5 +1,6 @@
 package com.nixsolutions.client;
 
+import com.nixsolutions.entity.ClientInterface;
 import com.nixsolutions.entity.Weather;
 import org.apache.cxf.helpers.IOUtils;
 import org.apache.cxf.jaxrs.client.WebClient;
