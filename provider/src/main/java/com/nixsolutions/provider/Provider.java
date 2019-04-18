@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
 
 public class Provider implements ProviderInterface {
 
-    final static Client client = new Client();
+    static final Client client = new Client();
 
     @Override
     public Response getWeatherByZip(String zip) {
