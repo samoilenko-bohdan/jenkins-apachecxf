@@ -12,7 +12,7 @@ import java.io.InputStream;
 
 public class Client implements ClientInterface {
 
-    private static String fullWeather;
+    private String fullWeather;
 
 
     public String getFullWeather() {
@@ -39,7 +39,7 @@ public class Client implements ClientInterface {
             weather.setPressure(json.getJSONObject("main").getInt("pressure"));
             weather.setWindSpeed(json.getJSONObject("wind").getInt("speed"));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println(e);
         }
         return weather;
     }
