@@ -19,7 +19,7 @@ public class Client implements ClientInterface {
         return fullWeather;
     }
 
-
+    @Override
     public Weather getWeather(String param) {
         WebClient client = WebClient.create("http://api.openweathermap.org/data/2.5/weather?" +
                 "APPID=8c284eaf2053d6cc7c76b5052fdc0362&units=metric&" + param);

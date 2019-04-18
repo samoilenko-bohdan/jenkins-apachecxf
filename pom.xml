@@ -14,18 +14,16 @@
         <module>test</module>
     </modules>
     <packaging>pom</packaging>
-    <name>Simple CXF JAX-RS webapp service using spring configuration</name>
-    <description>Simple CXF JAX-RS webapp service using spring configuration</description>
+    <name>Simple CXF JAX-RS webapp service</name>
+    <description>Simple CXF JAX-RS webapp</description>
 
 
     <!-- Change the version numbers or other configurations here -->
     <properties>
         <cxf.version>3.1.5</cxf.version>
         <jackson.version>1.8.6</jackson.version>
-        <spring.version>3.2.6.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <surefire.version>2.10</surefire.version>
-        <tomcat7.version>2.0</tomcat7.version>
         <compiler.srcversion>1.8</compiler.srcversion>
         <compiler.tgtversion>1.8</compiler.tgtversion>
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
@@ -114,7 +112,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.7.2.201409121644</version>
+                    <version>0.8.3</version>
                     <configuration>
                         <append>true</append>
                     </configuration>
